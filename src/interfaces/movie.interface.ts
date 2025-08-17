@@ -17,6 +17,7 @@ export interface CSFDMovie extends CSFDScreening {
   premieres: CSFDPremiere[];
   related: CSFDMovieListItem[];
   similar: CSFDMovieListItem[];
+  seasons: CSFDSeasons | null;
 }
 
 export type CSFDVodService =
@@ -146,3 +147,11 @@ export interface CSFDPremiere {
 }
 
 export type CSFDBoxContent = 'Související' | 'Podobné';
+
+export type CSFDSeasons = CSFDSeasonInfo[]
+
+export interface CSFDSeasonInfo {
+  name: string
+  linkToDetail: string
+  additionalInfo: string
+}

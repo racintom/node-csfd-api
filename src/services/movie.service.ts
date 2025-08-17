@@ -12,7 +12,7 @@ import {
   getPremieres,
   getRandomPhoto,
   getRating,
-  getRatingCount,
+  getRatingCount, getSeasonsInfo,
   getTags,
   getTitle,
   getTitlesOther,
@@ -82,7 +82,8 @@ export class MovieScraper {
       tags: getTags(asideEl),
       premieres: getPremieres(asideEl),
       related: getBoxMovies(asideEl, 'Související'),
-      similar: getBoxMovies(asideEl, 'Podobné')
+      similar: getBoxMovies(asideEl, 'Podobné'),
+      seasons: getSeasonsInfo(el)
     };
   }
 }

@@ -6,7 +6,7 @@ import {
   CSFDCreatorGroups,
   CSFDGenres,
   CSFDMovieListItem,
-  CSFDPremiere,
+  CSFDPremiere, CSFDSeasons,
   CSFDTitlesOther,
   CSFDVod,
   CSFDVodService
@@ -254,3 +254,23 @@ export const getTags = (el: HTMLElement): string[] => {
   const tagsRaw = el.querySelectorAll('.box-content a[href*="/podrobne-vyhledavani/?tag="]');
   return tagsRaw.map((tag) => tag.textContent);
 };
+
+export const getSeasonsInfo = (el: HTMLElement): CSFDSeasons => {
+  const seasonsList = el.querySelector('.film-episodes-list')
+  if (seasonsList === null) {
+    return null
+  }
+
+  const seasons = seasonsList.querySelectorAll('.film-title')
+
+  return seasons.map(season => {
+    const nameContainer = season.querySelector('.film-title-name')
+    const infoContainer = season.querySelector('.film-title-info')
+
+    return {
+      linkToDetail: nameContainer.getAttribute('href'),
+      name: nameContainer.textContent,
+      additionalInfo: infoContainer.textContent
+    }
+  })
+}
