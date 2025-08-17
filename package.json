@@ -1,9 +1,9 @@
 {
-  "name": "node-csfd-api",
-  "version": "2.12.2",
+  "name": "node-csfd-api-racintom",
+  "version": "1.0.0",
   "description": "ČSFD API in JavaScript. Amazing NPM library for scrapping csfd.cz :)",
   "main": "index.js",
-  "author": "BART! <bart@bartweb.cz>",
+  "author": "sergeras@seznam.cz",
   "scripts": {
     "start": "tsc -w",
     "prebuild": "rimraf dist",
@@ -14,7 +14,7 @@
     "lint": "eslint ./src/**/**/* --fix",
     "test": "vitest",
     "test:coverage": "yarn test run --coverage",
-    "publish:next": "yarn && yarn build && yarn test:coverage && cd dist && npm publish --tag next",
+    "publish:next": "yarn && yarn build && yarn test:coverage && cd dist && yarn publish --tag next",
     "postversion": "git push && git push --follow-tags",
     "release:beta": "npm version preminor --preid=beta -m \"chore(update): prelease %s β\"",
     "prerelease:beta": "npm version prerelease --preid=beta -m \"chore(update): prelease %s β\"",
@@ -24,8 +24,7 @@
     "prepare": "husky"
   },
   "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org"
+    "access": "public"
   },
   "dependencies": {
     "cross-fetch": "^4.1.0",
@@ -57,13 +56,13 @@
     "vitest": "^3.2.4"
   },
   "repository": {
-    "url": "git+https://github.com/bartholomej/node-csfd-api.git",
+    "url": "https://github.com/racintom/node-csfd-api.git",
     "type": "git"
   },
   "bugs": {
-    "url": "https://github.com/bartholomej/node-csfd-api/issues"
+    "url": "https://github.com/racintom/node-csfd-api/issues"
   },
-  "homepage": "https://github.com/bartholomej/node-csfd-api#readme",
+  "homepage": "https://github.com/racintom/node-csfd-api#readme",
   "keywords": [
     "csfd",
     "čsfd",
