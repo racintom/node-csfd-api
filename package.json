@@ -1,6 +1,6 @@
 {
   "name": "node-csfd-api-racintom",
-  "version": "1.0.0",
+  "version": "1.3.0",
   "description": "ČSFD API in JavaScript. Amazing NPM library for scrapping csfd.cz :)",
   "main": "index.js",
   "author": "sergeras@seznam.cz",
