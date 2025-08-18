@@ -11,3 +11,6 @@ export const creatorUrl = (creator: number | string): string =>
 
 export const searchUrl = (text: string): string =>
   `https://www.csfd.cz/hledat/?q=${encodeURIComponent(text)}`;
+
+export const seasonUrl = (url: string): string =>
+  `https://www.csfd.cz/${url}`;
