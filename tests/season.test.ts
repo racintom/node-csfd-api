@@ -1,10 +1,10 @@
 import { describe, expect, test } from 'vitest';
 import { csfd } from '../src';
-import { Season } from '../src/interfaces/season.interface';
+import { CSFDSeason } from '../src/interfaces/season.interface';
 
 describe('season', () => {
   test('gets season details for big bang theory', async () => {
-    const expectedSeason: Season = {
+    const expectedSeason: CSFDSeason = {
       description: "Dva fyzici Leonard a Sheldon rozumí úplně všemu, od nepřekonatelné gravitace černých děr po spletitou strukturu atomů. Jenže když vezmete ty atomy a zformujete z nich ženu, jsou oba vědátoři v koncích. Když se do sousedního bytu přistěhuje Penny, žena se všemi atomy na těch pravých místech, začne se soukromý vesmír pánů Leonarda a Sheldona rozpínat do netušených rozměrů. Tvůrci série Chuck Lorre (Dva a půl chlapa) a Bill Prady (Dharma & Greg) vytvořili skvělou melanž vědy, superhrdinů i sexu. Johnny Galecki (Roseanne) a Jim Parsons (Soudkyně Amy) v hlavních rolích rozesmějí každého. (Magic Box)",
       thumbnail: "//image.pmgstatic.com/cache/resized/w140/files/images/film/posters/157/797/157797756_1d26d3.jpg",
       episodeList: [
@@ -105,7 +105,7 @@ describe('season', () => {
 
 });
 
-function trimWhiteSpace(season: Season): Season {
+function trimWhiteSpace(season: CSFDSeason): CSFDSeason {
   return {
     ...season,
     description: season.description.replace(/\s/g, ""),

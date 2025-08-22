@@ -1,11 +1,11 @@
-export type Season = {
+export type CSFDSeason = {
   description: string;
   thumbnail: string;
-  episodeList: EpisodeInfo[]
+  episodeList: CSFDEpisodeInfo[]
   origin: string;
 }
 
-export type EpisodeInfo = {
+export type CSFDEpisodeInfo = {
   name: string
   seasonEpisodeIdentifier: string;
   linkToDetail: string

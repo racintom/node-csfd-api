@@ -7,7 +7,7 @@ import { MovieScraper } from './services/movie.service';
 import { SearchScraper } from './services/search.service';
 import { UserRatingsScraper } from './services/user-ratings.service';
 import { SeasonScraper } from './services/season.service';
-import { Season } from './interfaces/season.interface';
+import { CSFDSeason } from './interfaces/season.interface';
 
 export class Csfd {
   constructor(
@@ -37,7 +37,7 @@ export class Csfd {
     return this.searchService.search(text);
   }
 
-  public async seasonDetails(url: string): Promise<Season> {
+  public async seasonDetails(url: string): Promise<CSFDSeason> {
     return this.seasonService.season(url);
   }
 }

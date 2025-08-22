@@ -1,10 +1,10 @@
 import { fetchPage } from '../fetchers';
 import { HTMLElement, parse } from 'node-html-parser';
 import { seasonUrl } from '../vars';
-import { EpisodeInfo, Season } from '../interfaces/season.interface';
+import { CSFDEpisodeInfo, CSFDSeason } from '../interfaces/season.interface';
 
 export class SeasonScraper {
-  public async season(url: string): Promise<Season> {
+  public async season(url: string): Promise<CSFDSeason> {
     const response = await fetchPage(seasonUrl(url));
 
     const seasonHtml = parse(response);
@@ -16,7 +16,7 @@ export class SeasonScraper {
 
   private buildSeason(
     movieNode: HTMLElement
-  ): Season {
+  ): CSFDSeason {
     return {
       origin: this.getOriginFromHtml(movieNode),
       description: this.getDescriptionFromHtml(movieNode),
@@ -37,7 +37,7 @@ export class SeasonScraper {
     return movieNode.querySelector('.film-posters img').getAttribute('src');
   }
 
-  private getEpisodeListFromHtml(movieNode: HTMLElement): EpisodeInfo[] {
+  private getEpisodeListFromHtml(movieNode: HTMLElement): CSFDEpisodeInfo[] {
     return movieNode.querySelectorAll('.film-episodes-list li').map(container => {
       const nameContainer = container.querySelector('.film-title-name')
 
