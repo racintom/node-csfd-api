@@ -1,5 +1,5 @@
 export type CSFDSeason = {
-  description: string;
+  description: string | undefined;
   thumbnail: string;
   episodeList: CSFDEpisodeInfo[]
   origin: string;

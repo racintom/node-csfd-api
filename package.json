@@ -1,6 +1,6 @@
 {
   "name": "node-csfd-api-racintom",
-  "version": "1.7.0",
+  "version": "1.9.0",
   "description": "ČSFD API in JavaScript. Amazing NPM library for scrapping csfd.cz :)",
   "main": "index.js",
   "author": "sergeras@seznam.cz",
@@ -14,7 +14,7 @@
     "lint": "eslint ./src/**/**/* --fix",
     "test": "vitest",
     "test:coverage": "yarn test run --coverage",
-    "publish:next": "yarn && yarn build && yarn test:coverage && cd dist && yarn publish --tag next",
+    "publish:next": "yarn && yarn build && yarn test:coverage && cd dist && npm publish",
     "postversion": "git push && git push --follow-tags",
     "release:beta": "npm version preminor --preid=beta -m \"chore(update): prelease %s β\"",
     "prerelease:beta": "npm version prerelease --preid=beta -m \"chore(update): prelease %s β\"",

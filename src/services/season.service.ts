@@ -29,8 +29,8 @@ export class SeasonScraper {
     return movieNode.querySelector('.film-info-content .origin').textContent;
   }
 
-  private getDescriptionFromHtml(movieNode: HTMLElement): string {
-    return movieNode.querySelector('.plot-full').textContent;
+  private getDescriptionFromHtml(movieNode: HTMLElement): string | undefined {
+    return movieNode.querySelector('.plot-full')?.textContent;
   }
 
   private getThumbnailFromHtml(movieNode: HTMLElement): string {
