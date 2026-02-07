@@ -210,7 +210,7 @@ export const getVods = (el: HTMLElement | null): CSFDVod[] => {
 // Get box content
 export const getBoxContent = (el: HTMLElement, box: string): HTMLElement => {
   const headers = el.querySelectorAll('section.box .box-header');
-  return headers.find((header) => header.querySelector('h3').textContent.trim().includes(box))
+  return headers.find((header) => header.querySelector('h3')?.textContent?.trim()?.includes(box))
     ?.parentNode;
 };
 
